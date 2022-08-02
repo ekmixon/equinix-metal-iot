@@ -4,7 +4,6 @@ import os, json, time
 
 def on_publish(client, userdata, result):
     print("Point published\n")
-    pass
 
 client = mqtt.Client("127.0.0.1:8081", transport="websockets")
 
@@ -17,8 +16,8 @@ client.connect(broker, port)
 start_lat = 52.5740072
 start_lon = -0.2399354
 max = 15
-for x in range(0, max):
-    print("Printing point {}/{}".format(x, 15))
+for x in range(max):
+    print(f"Printing point {x}/15")
     lat = start_lat + x*0.0001
     lon = start_lon + (-x*0.0001)
 
